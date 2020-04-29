@@ -1,0 +1,12 @@
+name: 'Puppeteer Headful'
+description: 'Github Action for Puppeteer that can be ran "headful" or not headless.'
+inputs:
+  args:
+    description: 'Test arguments'
+    required: true
+    default: 'npm run test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
